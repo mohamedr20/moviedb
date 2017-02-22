@@ -26,12 +26,12 @@ router.get('/', ensureAuthenticated, function(req, res){
 //Get a movie results and tv shows 
 router.get('/api/results',function(req,res){
     var query = req.query.search;
-    var url = 'https://api.themoviedb.org/3/search/multi?api_key='+AuthConfig.movieDB.apiKey+'&query='+query;
+    var url = "http://www.omdbapi.com/?t="+query+"&y=&plot=short&r=json";
     request(url,function(error,response,body){
         if(!error && response.statusCode == 200){
             var data = JSON.parse(body);
             res.render('results',{data:data});
-            console.log(data["results"]);
+            console.log(data["Title"]);
         }
     });
 });
@@ -46,11 +46,12 @@ router.get('/api/results',function(req,res){
 // var size = img["logo_sizes"][0];
 //file_path comes from the tv["poster_path"]
 router.get('/api/picture',function(req,res){
+
     var baseUrl =  'https://api.themoviedb.org/3/configuration?api_key='+AuthConfig.movieDB.apiKey;
-    request(baseUrl,function(error,response,body){
+    request(imagesurl,function(error,response,body){
         if(!error && response.statusCode == 200){
             var imgdata = JSON.parse(body);
-            res.send('results',{imgdata:imgdata});
+            res.render('picture',{imgdata:imgdata});
         }
     });
 });

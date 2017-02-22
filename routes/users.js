@@ -5,6 +5,7 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
 
+module.exports = 
 // Register
 router.get('/register', function(req, res){
     res.render('register');

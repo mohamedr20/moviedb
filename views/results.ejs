@@ -23,18 +23,8 @@
 </header>
 <section class="hero-container">
     <div>
-    <h1>Display TV Results</h1>
-    <h1><%data["results"].forEach(function(item){ %></h1>
-        <h1><%=item["original_title"]|| item["name"]%></h1>
-        <h3> Overview:<%=item["overview"]%></h3>
-        <h3>Average Vote: <%=item["vote_average"]%></h3>
-        <h3>Media Type: <%=item["media_type"]%></h3>
-        <h3>Popularity:<%=item["popularity"]%></h3>
-        <h3>Date First Aired:<%=item["first_air_date"]%></h3>
-        <%var posterpath = item["poster_path"]%>
-        <h1><%=posterpath%></h1>
-    </div>
-    <% }) %>
+    <h1><%=data["Title"]%></h1>
+        <img src="<%=data["Poster"]%>">
 
 
 </section>
