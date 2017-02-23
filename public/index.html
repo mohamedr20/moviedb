@@ -1,14 +1,29 @@
-<!doctype html>
-<html ng-app>
+<html>
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <title>LoginApp</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+
 </head>
 <body>
-<div>
-    <label>Name:</label>
-    <input type="text" ng-model="yourName" placeholder="Enter a name here">
-    <hr>
-    <h1>Hello {{yourName}}!</h1>
-</div>
+    <h1>Search For a Show/Movie</h1>
+
+    <form action="/api/results" method="GET">
+        <input type="text" placeholder="search for a title" name="search">
+        <input type="submit">
+    </form>
+
 </body>
+
+<!--<h1>Search for a Movie</h1>-->
+<!--<form action="/api/movieresults" method="GET">-->
+<!--<input type="text" placeholder="search for a movie" name="search">-->
+<!--<input type="submit">-->
+<!--</form>-->
+
+<!--<h1>Search for a picture</h1>-->
 </html>
